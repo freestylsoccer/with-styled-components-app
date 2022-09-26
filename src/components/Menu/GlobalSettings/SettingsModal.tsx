@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { Text, Flex, Modal, InjectedModalProps, ThemeSwitcher } from '../../../../uikit/src'
 import useTheme from '../../../hooks/useTheme'
-import { SettingsMode } from './types'
-import { Trans } from '@lingui/macro'
 import { i18n } from "@lingui/core"
 import { t } from "@lingui/macro"
 
@@ -31,10 +29,12 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss, mode }) => {
       <ScrollableContainer>
         <Flex pb="24px" flexDirection="column">
           <Text bold textTransform="uppercase" fontSize="18px" color="secondary" mb="24px">
-            <Trans>Global</Trans>
+            {i18n._(t`Global`)}
           </Text>
           <Flex justifyContent="space-between" mb="24px">
-            <Text><Trans>Dark mode</Trans></Text>
+            <Text>
+              {i18n._(t`Dark mode`)}
+            </Text>
             <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'light' : 'dark')} />
           </Flex>
         </Flex>

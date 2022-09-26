@@ -4,14 +4,15 @@ import {
   UserMenuItem,
   Box,
 } from '../../../../uikit/src'
-import { Trans } from '@lingui/macro'
+import { i18n } from "@lingui/core"
+import { t } from "@lingui/macro"
 
 const UserMenu = () => {
   const UserMenuItems = () => {
     return (
       <>
         <UserMenuItem as="button" disabled={false}>
-          <Trans>Recent Transactions</Trans>
+        {i18n._(t`Recent Transactions`)}
         </UserMenuItem>
         <UserMenuDivider />
       </>
@@ -29,10 +30,10 @@ const UserMenu = () => {
   return (
     <div>
       <Box display={['none', , , 'block']}>
-        <Trans>Login</Trans>
+        {i18n._(t`Login`)}
       </Box>
       <Box display={['block', , , 'none']}>
-        <Trans>Login</Trans>
+        {i18n._(t`Login`)}
       </Box>
     </div>
   )

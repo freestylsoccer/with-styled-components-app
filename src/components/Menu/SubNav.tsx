@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { ButtonMenu, ButtonMenuItem } from '../../../uikit/src'
-import { Trans } from '@lingui/macro'
+import { i18n } from "@lingui/core"
+import { t } from "@lingui/macro"
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -30,12 +31,12 @@ const Nav = () => {
       <ButtonMenu activeIndex={getActiveIndex(pathname)} scale="sm" variant="subtle">
         <Link href="/swap" passHref>
           <ButtonMenuItem id="swap-nav-link" as="a">
-            <Trans>Swap</Trans>
+            {i18n._(t`Swap`)}
           </ButtonMenuItem>
         </Link>
         <Link href="/pool" passHref>
           <ButtonMenuItem id="pool-nav-link" as="a">
-            <Trans>Liquidity</Trans>
+            {i18n._(t`Liquidity`)}
           </ButtonMenuItem>
         </Link>
       </ButtonMenu>

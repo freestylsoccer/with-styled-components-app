@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { light, dark, MatchBreakpointsProvider } from '../uikit/src'
+import { ModalProvider, light, dark, MatchBreakpointsProvider } from '../uikit/src'
 import { Provider } from 'react-redux'
 import { useRouter } from 'next/router'
 import * as plurals from 'make-plural/plurals'
@@ -41,7 +41,7 @@ const Providers: React.FC<{ children: React.ReactNode, store: Store }> = ({ chil
           <I18Provider>
             <NextThemeProvider>
               <StyledThemeProvider>
-                {children}
+                <ModalProvider>{children}</ModalProvider>
               </StyledThemeProvider>
             </NextThemeProvider>
           </I18Provider>
