@@ -1,17 +1,17 @@
-import { useMemo } from 'react'
 import { useRouter } from 'next/router'
+import { useMemo } from 'react'
+
+import { Menu as UikitMenu } from '../../../uikit/src'
 import useLanguage from '../../hooks/useLanguage'
+import useTheme from '../../hooks/useTheme'
 import { languageList } from '../../localization'
 import { NextLinkFromReactRouter } from '..//NextLink'
-import { Menu as UikitMenu } from '../../../uikit/src'
-import useTheme from '../../hooks/useTheme'
-
-import UserMenu from './UserMenu'
-import { useMenuItems } from './hooks/useMenuItems'
-import GlobalSettings from './GlobalSettings'
-import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 import { footerLinks } from './config/footerConfig'
+import GlobalSettings from './GlobalSettings'
 import { SettingsMode } from './GlobalSettings/types'
+import { useMenuItems } from './hooks/useMenuItems'
+import UserMenu from './UserMenu'
+import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 
 const Menu = (props) => {
   const { isDark, setTheme } = useTheme()
@@ -30,7 +30,7 @@ const Menu = (props) => {
 
   const getFooterLinks = useMemo(() => {
     return footerLinks()
-  }, [locale])
+  }, [])
 
   return (
     <UikitMenu

@@ -1,3 +1,3 @@
 export enum SettingsMode {
-  GLOBAL = 'GLOBAL'
+  GLOBAL = 'GLOBAL',
 }

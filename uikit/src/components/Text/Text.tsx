@@ -1,15 +1,15 @@
-import styled, { DefaultTheme } from "styled-components";
-import { space, typography, layout } from "styled-system";
-import getThemeValue from "../../util/getThemeValue";
-import { TextProps } from "./types";
+import styled, { DefaultTheme } from 'styled-components'
+import { space, typography, layout } from 'styled-system'
+import getThemeValue from '../../util/getThemeValue'
+import { TextProps } from './types'
 
 interface ThemedProps extends TextProps {
-  theme: DefaultTheme;
+  theme: DefaultTheme
 }
 
 const getColor = ({ color, theme }: ThemedProps) => {
-  return getThemeValue(theme, `colors.${color}`, color);
-};
+  return getThemeValue(theme, `colors.${color}`, color)
+}
 
 const Text = styled.div<TextProps>`
   color: ${getColor};
@@ -27,13 +27,13 @@ const Text = styled.div<TextProps>`
   ${layout}
 
   ${({ small }) => small && `font-size: 14px;`}
-`;
+`
 
 Text.defaultProps = {
-  color: "text",
+  color: 'text',
   small: false,
-  fontSize: "16px",
+  fontSize: '16px',
   ellipsis: false,
-};
+}
 
-export default Text;
+export default Text

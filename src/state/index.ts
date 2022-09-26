@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import {
+  createMigrate,
   FLUSH,
   PAUSE,
   PERSIST,
@@ -10,9 +11,9 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-  createMigrate,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+
 import { updateVersion } from './global/actions'
 import user from './user/reducer'
 
@@ -47,8 +48,8 @@ const persistConfig = {
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
-    user
-  }),
+    user,
+  })
 )
 
 // eslint-disable-next-line import/no-mutable-exports

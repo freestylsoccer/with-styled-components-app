@@ -1,8 +1,9 @@
-import { i18n } from "@lingui/core"
-import { t } from "@lingui/macro"
-import styled from "styled-components";
-import { Box, Flex, Heading, Text } from "../../../uikit/src"
-import Cards from "./components/cards"
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
+import styled from 'styled-components'
+
+import { Box, Flex, Heading, Text } from '../../../uikit/src'
+import Cards from './components/cards'
 
 export const StyledToolsContainer = styled(Flex)`
   border-color: ${({ theme }) => theme.colors.cardBorder};
@@ -25,11 +26,11 @@ const Home: React.FC = () => {
     <>
       <Box mt="6rem">
         <Flex flexDirection="column" alignItems="center" justifyContent="center">
-          <Heading scale="xxl" color="secondary" mb="24px">{i18n._(t`Welcome to`)} <a href="https://nextjs.org">Next.js!</a></Heading>
-          <Text color='secondary'>
-            {i18n._(t`Get started by editing`)}
-          </Text>
-          <Text color='textSubtle'>pages/index.tsx</Text>
+          <Heading scale="xxl" color="secondary" mb="24px">
+            {i18n._(t`Welcome to`)} <a href="https://nextjs.org">Next.js!</a>
+          </Heading>
+          <Text color="secondary">{i18n._(t`Get started by editing`)}</Text>
+          <Text color="textSubtle">pages/index.tsx</Text>
         </Flex>
         <Flex mt="2rem" flexDirection="column" alignItems="center" justifyContent="center">
           <Cards />

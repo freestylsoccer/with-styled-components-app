@@ -1,9 +1,10 @@
-import styled from 'styled-components'
-import { ButtonMenu, ButtonMenuItem } from '../../../uikit/src'
-import { i18n } from "@lingui/core"
-import { t } from "@lingui/macro"
-import { useRouter } from 'next/router'
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styled from 'styled-components'
+
+import { ButtonMenu, ButtonMenuItem } from '../../../uikit/src'
 
 const StyledNav = styled.nav`
   margin-bottom: 40px;

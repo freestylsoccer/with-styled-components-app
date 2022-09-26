@@ -12,11 +12,8 @@ module.exports = {
   format: 'minimal',
   formatOptions: { origins: false, lineNumbers: false },
   sourceLocale: 'en',
-  locales: [
-    'en',
-    'es',
-  ],
+  locales: ['en', 'es'],
   orderBy: 'messageId',
   pseudoLocale: '',
-  rootDir: '.'
+  rootDir: '.',
 }

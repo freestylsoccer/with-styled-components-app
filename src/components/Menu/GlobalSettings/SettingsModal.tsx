@@ -1,8 +1,9 @@
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
 import styled from 'styled-components'
-import { Text, Flex, Modal, InjectedModalProps, ThemeSwitcher } from '../../../../uikit/src'
+
+import { Flex, InjectedModalProps, Modal, Text, ThemeSwitcher } from '../../../../uikit/src'
 import useTheme from '../../../hooks/useTheme'
-import { i18n } from "@lingui/core"
-import { t } from "@lingui/macro"
 
 const ScrollableContainer = styled(Flex)`
   flex-direction: column;
@@ -32,9 +33,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss, mode }) => {
             {i18n._(t`Global`)}
           </Text>
           <Flex justifyContent="space-between" mb="24px">
-            <Text>
-              {i18n._(t`Dark mode`)}
-            </Text>
+            <Text>{i18n._(t`Dark mode`)}</Text>
             <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'light' : 'dark')} />
           </Flex>
         </Flex>

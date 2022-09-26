@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
-import { Flex, Box } from "../Box";
+import styled, { css } from 'styled-components'
+import { Flex, Box } from '../Box'
 
 export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`
   ${({ theme }) => theme.mediaQueries.sm} {
-    ${({ $isMobileOnly }) => ($isMobileOnly ? "display:none" : "")};
+    ${({ $isMobileOnly }) => ($isMobileOnly ? 'display:none' : '')};
   }
   width: 100%;
   overflow: hidden;
   position: relative;
-`;
+`
 const StyledSubMenuItems = styled(Flex)`
   position: relative;
   z-index: 1;
@@ -29,7 +29,7 @@ const StyledSubMenuItems = styled(Flex)`
   &::-webkit-scrollbar {
     display: none;
   }
-`;
+`
 
 const maskSharedStyle = css`
   position: absolute;
@@ -47,7 +47,7 @@ const maskSharedStyle = css`
     opacity: 0;
     transition: 0.25s ease-out opacity;
   }
-`;
+`
 
 export const LeftMaskLayer = styled.div`
   ${maskSharedStyle}
@@ -56,7 +56,7 @@ export const LeftMaskLayer = styled.div`
     theme.isDark
       ? `linear-gradient(90deg, #27262c 29.76%, rgba(39,38,44, 0) 100%)`
       : `linear-gradient(90deg, #ffffff 29.76%, rgba(255, 255, 255, 0) 100%)`};
-`;
+`
 export const RightMaskLayer = styled.div`
   ${maskSharedStyle}
   right: 0px;
@@ -64,12 +64,12 @@ export const RightMaskLayer = styled.div`
     theme.isDark
       ? `linear-gradient(270deg, #27262c 0%, rgba(39,38,44, 0) 87.5%)`
       : `linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 87.5%)`};
-`;
+`
 
 export const StyledSubMenuItemWrapper = styled(Box)`
   display: inline-block;
   vertical-align: top;
   scroll-snap-align: start;
-`;
+`
 
-export default StyledSubMenuItems;
+export default StyledSubMenuItems

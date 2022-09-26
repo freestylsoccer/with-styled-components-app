@@ -1,7 +1,7 @@
-import { m as motion } from "framer-motion";
-import styled from "styled-components";
-import { background, border, layout, position, space, color } from "styled-system";
-import { BoxProps } from "./types";
+import { m as motion } from 'framer-motion'
+import styled from 'styled-components'
+import { background, border, layout, position, space, color } from 'styled-system'
+import { BoxProps } from './types'
 
 export const MotionBox = styled(motion.div)<BoxProps>`
   ${background}
@@ -9,7 +9,7 @@ export const MotionBox = styled(motion.div)<BoxProps>`
   ${layout}
   ${position}
   ${space}
-`;
+`
 
 const Box = styled.div<BoxProps>`
   ${background}
@@ -18,6 +18,6 @@ const Box = styled.div<BoxProps>`
   ${position}
   ${space}
   ${color}
-`;
+`
 
-export default Box;
+export default Box

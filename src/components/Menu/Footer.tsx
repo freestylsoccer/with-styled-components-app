@@ -1,9 +1,10 @@
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
 import { memo } from 'react'
 import styled from 'styled-components'
-import { ButtonMenu, ButtonMenuItem, Flex, Svg, Image, Button } from '../../../uikit/src'
+
+import { Button,ButtonMenu, ButtonMenuItem, Flex, Image, Svg } from '../../../uikit/src'
 import { LinkExternal } from '../../../uikit/src/components/Link'
-import { i18n } from '@lingui/core'
-import { t } from "@lingui/macro"
 import { EXCHANGE_DOCS_URLS } from '../../config/constants'
 
 const Wrapper = memo(styled.div<{ $isSide: boolean }>`

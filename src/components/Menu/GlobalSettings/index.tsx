@@ -1,4 +1,4 @@
-import { Flex, IconButton, CogIcon, useModal } from '../../../../uikit/src'
+import { CogIcon, Flex, IconButton, useModal } from '../../../../uikit/src'
 import SettingsModal from './SettingsModal'
 
 type Props = {

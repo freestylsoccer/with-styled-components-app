@@ -1,7 +1,7 @@
-import { useContext } from 'react'
 import Cookie from 'js-cookie'
-import { ThemeContext as StyledThemeContext } from 'styled-components'
 import { useTheme as useNextTheme } from 'next-themes'
+import { useContext } from 'react'
+import { ThemeContext as StyledThemeContext } from 'styled-components'
 
 export const COOKIE_THEME_KEY = 'theme'
 export const THEME_DOMAIN = '.mytemplate.com'

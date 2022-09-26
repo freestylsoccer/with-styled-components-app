@@ -1,6 +1,7 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
 import { COOKIE_LANGUAGE_KEY, LANG_DOMAIN } from './useLanguage'
 
 const useLanguageCookie = () => {
@@ -13,7 +14,7 @@ const useLanguageCookie = () => {
       Cookie.set(COOKIE_LANGUAGE_KEY, locale, { domain: LANG_DOMAIN })
       push(asPath, undefined, { locale: locale })
     }
-  }, [locale])
+  }, [locale, push, asPath])
 }
 
 export default useLanguageCookie

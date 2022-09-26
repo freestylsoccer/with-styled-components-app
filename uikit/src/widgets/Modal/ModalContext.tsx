@@ -1,25 +1,25 @@
-import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
-import React, { createContext, ReactNode, useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import { mountAnimation, unmountAnimation } from "../../components/BottomDrawer/styles";
-import { Overlay } from "../../components/Overlay";
+import { AnimatePresence, domMax, LazyMotion, m } from 'framer-motion'
+import React, { createContext, ReactNode, useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+import { mountAnimation, unmountAnimation } from '../../components/BottomDrawer/styles'
+import { Overlay } from '../../components/Overlay'
 import {
   animationHandler,
   animationMap,
   animationVariants,
   appearAnimation,
   disappearAnimation,
-} from "../../util/animationToolkit";
-import { ModalContainer } from "./styles";
-import { Handler } from "./types";
+} from '../../util/animationToolkit'
+import { ModalContainer } from './styles'
+import { Handler } from './types'
 
 interface ModalsContext {
-  isOpen: boolean;
-  nodeId: string;
-  modalNode: React.ReactNode;
-  setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>;
-  onPresent: (node: React.ReactNode, newNodeId: string, closeOverlayClick: boolean) => void;
-  onDismiss: Handler;
+  isOpen: boolean
+  nodeId: string
+  modalNode: React.ReactNode
+  setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>
+  onPresent: (node: React.ReactNode, newNodeId: string, closeOverlayClick: boolean) => void
+  onDismiss: Handler
 }
 
 const ModalWrapper = styled(m.div)`
@@ -53,53 +53,53 @@ const ModalWrapper = styled(m.div)`
       }
     }
   }
-`;
+`
 
 export const Context = createContext<ModalsContext>({
   isOpen: false,
-  nodeId: "",
+  nodeId: '',
   modalNode: null,
   setModalNode: () => null,
   onPresent: () => null,
   onDismiss: () => null,
-});
+})
 
 const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [modalNode, setModalNode] = useState<React.ReactNode>();
-  const [nodeId, setNodeId] = useState("");
-  const [closeOnOverlayClick, setCloseOnOverlayClick] = useState(true);
-  const animationRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const [modalNode, setModalNode] = useState<React.ReactNode>()
+  const [nodeId, setNodeId] = useState('')
+  const [closeOnOverlayClick, setCloseOnOverlayClick] = useState(true)
+  const animationRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const setViewportHeight = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-    setViewportHeight();
-    window.addEventListener("resize", setViewportHeight);
-    return () => window.removeEventListener("resize", setViewportHeight);
-  }, []);
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+    setViewportHeight()
+    window.addEventListener('resize', setViewportHeight)
+    return () => window.removeEventListener('resize', setViewportHeight)
+  }, [])
 
   const handlePresent = (node: React.ReactNode, newNodeId: string, closeOverlayClick: boolean) => {
-    setModalNode(node);
-    setIsOpen(true);
-    setNodeId(newNodeId);
-    setCloseOnOverlayClick(closeOverlayClick);
-  };
+    setModalNode(node)
+    setIsOpen(true)
+    setNodeId(newNodeId)
+    setCloseOnOverlayClick(closeOverlayClick)
+  }
 
   const handleDismiss = () => {
-    setModalNode(undefined);
-    setIsOpen(false);
-    setNodeId("");
-    setCloseOnOverlayClick(true);
-  };
+    setModalNode(undefined)
+    setIsOpen(false)
+    setNodeId('')
+    setCloseOnOverlayClick(true)
+  }
 
   const handleOverlayDismiss = () => {
     if (closeOnOverlayClick) {
-      handleDismiss();
+      handleDismiss()
     }
-  };
+  }
 
   return (
     <Context.Provider
@@ -133,7 +133,7 @@ const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       </LazyMotion>
       {children}
     </Context.Provider>
-  );
-};
+  )
+}
 
-export default ModalProvider;
+export default ModalProvider

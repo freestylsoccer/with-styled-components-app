@@ -1,14 +1,14 @@
-import { useContext } from "react";
-import { MatchBreakpointsContext } from "./Provider";
+import { useContext } from 'react'
+import { MatchBreakpointsContext } from './Provider'
 
 const useMatchBreakpointsContext = () => {
-  const matchBreakpointContext = useContext(MatchBreakpointsContext);
+  const matchBreakpointContext = useContext(MatchBreakpointsContext)
 
   if (matchBreakpointContext === undefined) {
-    throw new Error("Match Breakpoint context is undefined");
+    throw new Error('Match Breakpoint context is undefined')
   }
 
-  return matchBreakpointContext;
-};
+  return matchBreakpointContext
+}
 
-export default useMatchBreakpointsContext;
+export default useMatchBreakpointsContext

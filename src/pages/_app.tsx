@@ -1,15 +1,16 @@
-import { ResetCSS } from '../../uikit/src'
+import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Fragment } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
-import { NextPage } from 'next'
+
+import { ResetCSS } from '../../uikit/src'
 import GlobalStyle from '../../uikit/src/Global'
-import { useStore, persistor } from '../state'
+import Menu from '../components/Menu'
+import useLanguageCookie from '../hooks/useLangugeCookie'
 import useThemeCookie from '../hooks/useThemeCookie'
 import Providers from '../Providers'
-import useLanguageCookie from '../hooks/useLangugeCookie'
-import Menu from '../components/Menu'
+import { persistor,useStore } from '../state'
 
 function GlobalHooks() {
   useThemeCookie()

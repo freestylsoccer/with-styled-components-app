@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 const useOnClickOutside = (htmlNode: HTMLElement | null, handler: (event?: MouseEvent | TouchEvent) => void): void => {
   useEffect(
@@ -7,18 +7,18 @@ const useOnClickOutside = (htmlNode: HTMLElement | null, handler: (event?: Mouse
         const listener = (event: MouseEvent | TouchEvent) => {
           // Do nothing if clicking ref's element or descendent elements
           if (htmlNode.contains(event.target as Node)) {
-            return;
+            return
           }
-          handler(event);
-        };
-        document.addEventListener("mousedown", listener);
-        document.addEventListener("touchstart", listener);
+          handler(event)
+        }
+        document.addEventListener('mousedown', listener)
+        document.addEventListener('touchstart', listener)
         return () => {
-          document.removeEventListener("mousedown", listener);
-          document.removeEventListener("touchstart", listener);
-        };
+          document.removeEventListener('mousedown', listener)
+          document.removeEventListener('touchstart', listener)
+        }
       }
-      return undefined;
+      return undefined
     },
     // It's worth noting that because passed in handler is a new ...
     // ... function on every render that will cause this effect ...
@@ -26,7 +26,7 @@ const useOnClickOutside = (htmlNode: HTMLElement | null, handler: (event?: Mouse
     // ... but to optimize you can wrap handler in useCallback before ...
     // ... passing it into this hook.
     [htmlNode, handler]
-  );
-};
+  )
+}
 
-export default useOnClickOutside;
+export default useOnClickOutside

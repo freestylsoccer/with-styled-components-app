@@ -1,6 +1,6 @@
+import NextLink from 'next/link'
 import { forwardRef } from 'react'
 import styled from 'styled-components'
-import NextLink from 'next/link'
 
 // react-router-dom LinkProps types
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -23,5 +23,5 @@ export const NextLinkFromReactRouter = forwardRef<any, LinkProps>(
         {children}
       </A>
     </NextLink>
-  ),
+  )
 )

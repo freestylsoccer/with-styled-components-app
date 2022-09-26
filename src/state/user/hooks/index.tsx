@@ -1,9 +1,8 @@
 import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
+
 import { AppState, useAppDispatch } from '../../index'
-import {
-  updateUserExpertMode
-} from '../actions'
+import { updateUserExpertMode } from '../actions'
 
 export function useIsExpertMode(): boolean {
   return useSelector<AppState, AppState['user']['userExpertMode']>((state) => state.user.userExpertMode)

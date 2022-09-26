@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { t } from '@lingui/macro'
-import { Text } from '../../../../uikit/src'
 import Cookie from 'js-cookie'
+import { useRouter } from 'next/router'
+
+import { Text } from '../../../../uikit/src'
 
 const availableLanguageNames = {
   en: t`English`,
@@ -21,9 +21,7 @@ const LangSwitcher: React.FC = () => {
   return (
     <>
       <div>
-        <Text>
-          {locale && LANG_TO_COUNTRY[locale]}
-        </Text>
+        <Text>{locale && LANG_TO_COUNTRY[locale]}</Text>
         <ul>
           {locales?.map((l, index) => {
             return (
@@ -34,10 +32,7 @@ const LangSwitcher: React.FC = () => {
                 }}
                 key={index}
               >
-                <Text
-                  fontSize="sm"
-                  fontWeight={700}
-                >
+                <Text fontSize="sm" fontWeight={700}>
                   {LANG_TO_COUNTRY[l]}
                 </Text>
               </li>

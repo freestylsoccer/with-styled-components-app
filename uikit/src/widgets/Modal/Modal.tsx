@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import { useTheme } from "styled-components";
-import Heading from "../../components/Heading/Heading";
-import getThemeValue from "../../util/getThemeValue";
-import { ModalBody, ModalHeader, ModalTitle, ModalContainer, ModalCloseButton, ModalBackButton } from "./styles";
-import { ModalProps } from "./types";
-import { useMatchBreakpointsContext } from "../../contexts";
+import React, { useRef } from 'react'
+import { useTheme } from 'styled-components'
+import Heading from '../../components/Heading/Heading'
+import getThemeValue from '../../util/getThemeValue'
+import { ModalBody, ModalHeader, ModalTitle, ModalContainer, ModalCloseButton, ModalBackButton } from './styles'
+import { ModalProps } from './types'
+import { useMatchBreakpointsContext } from '../../contexts'
 
-export const MODAL_SWIPE_TO_CLOSE_VELOCITY = 300;
+export const MODAL_SWIPE_TO_CLOSE_VELOCITY = 300
 
 const Modal: React.FC<ModalProps> = ({
   title,
@@ -14,26 +14,26 @@ const Modal: React.FC<ModalProps> = ({
   onBack,
   children,
   hideCloseButton = false,
-  bodyPadding = "24px",
-  headerBackground = "transparent",
-  minWidth = "320px",
+  bodyPadding = '24px',
+  headerBackground = 'transparent',
+  minWidth = '320px',
   ...props
 }) => {
-  const theme = useTheme();
-  const { isMobile } = useMatchBreakpointsContext();
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const theme = useTheme()
+  const { isMobile } = useMatchBreakpointsContext()
+  const wrapperRef = useRef<HTMLDivElement>(null)
   return (
     // @ts-ignore
     <ModalContainer
-      drag={isMobile ? "y" : false}
+      drag={isMobile ? 'y' : false}
       dragConstraints={{ top: 0, bottom: 600 }}
       dragElastic={{ top: 0 }}
       dragSnapToOrigin
       onDragStart={() => {
-        if (wrapperRef.current) wrapperRef.current.style.animation = "none";
+        if (wrapperRef.current) wrapperRef.current.style.animation = 'none'
       }}
       onDragEnd={(e, info) => {
-        if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss();
+        if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss()
       }}
       ref={wrapperRef}
       minWidth={minWidth}
@@ -48,7 +48,7 @@ const Modal: React.FC<ModalProps> = ({
       </ModalHeader>
       <ModalBody p={bodyPadding}>{children}</ModalBody>
     </ModalContainer>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

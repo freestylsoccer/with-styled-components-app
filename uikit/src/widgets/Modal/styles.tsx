@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Flex from "../../components/Box/Flex";
-import { MotionBox } from "../../components/Box";
-import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
-import { IconButton } from "../../components/Button";
-import { ModalProps } from "./types";
+import React from 'react'
+import styled from 'styled-components'
+import Flex from '../../components/Box/Flex'
+import { MotionBox } from '../../components/Box'
+import { ArrowBackIcon, CloseIcon } from '../../components/Svg'
+import { IconButton } from '../../components/Button'
+import { ModalProps } from './types'
 
-export const mobileFooterHeight = 73;
+export const mobileFooterHeight = 73
 
 export const ModalHeader = styled.div<{ background?: string }>`
   align-items: center;
@@ -16,14 +16,14 @@ export const ModalHeader = styled.div<{ background?: string }>`
   padding: 12px 24px;
 
   ${({ theme }) => theme.mediaQueries.md} {
-    background: ${({ background }) => background || "transparent"};
+    background: ${({ background }) => background || 'transparent'};
   }
-`;
+`
 
 export const ModalTitle = styled(Flex)`
   align-items: center;
   flex: 1;
-`;
+`
 
 export const ModalBody = styled(Flex)`
   flex-direction: column;
@@ -33,23 +33,23 @@ export const ModalBody = styled(Flex)`
     display: flex;
     max-height: 90vh;
   }
-`;
+`
 
-export const ModalCloseButton: React.FC<{ onDismiss: ModalProps["onDismiss"] }> = ({ onDismiss }) => {
+export const ModalCloseButton: React.FC<{ onDismiss: ModalProps['onDismiss'] }> = ({ onDismiss }) => {
   return (
     <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
       <CloseIcon color="primary" />
     </IconButton>
-  );
-};
+  )
+}
 
-export const ModalBackButton: React.FC<{ onBack: ModalProps["onBack"] }> = ({ onBack }) => {
+export const ModalBackButton: React.FC<{ onBack: ModalProps['onBack'] }> = ({ onBack }) => {
   return (
     <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
       <ArrowBackIcon color="primary" />
     </IconButton>
-  );
-};
+  )
+}
 
 export const ModalContainer = styled(MotionBox)<{ $minWidth: string }>`
   overflow: hidden;
@@ -73,4 +73,4 @@ export const ModalContainer = styled(MotionBox)<{ $minWidth: string }>`
     max-width: 100%;
     max-height: 100vh;
   }
-`;
+`

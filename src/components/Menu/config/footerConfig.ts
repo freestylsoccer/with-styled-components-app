@@ -1,6 +1,7 @@
-import { i18n } from "@lingui/core"
-import { t } from "@lingui/macro"
-import { FooterLinkType } from "../../../../uikit/src"
+import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
+
+import { FooterLinkType } from '../../../../uikit/src'
 
 export const footerLinks: () => FooterLinkType[] = () => [
   {

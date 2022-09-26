@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const ResetCSS = createGlobalStyle`
   /* prettier-ignore */
@@ -111,6 +111,6 @@ const ResetCSS = createGlobalStyle`
     border-color: transparent;
     color: transparent;
   }  
-`;
+`
 
-export default ResetCSS;
+export default ResetCSS

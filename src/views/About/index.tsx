@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import useTheme from "../../hooks/useTheme"
-import { Container, Main, Title, Description } from '../../components/sharedstyles'
 
-const About = () =>  {
+import { Container, Description,Main, Title } from '../../components/sharedstyles'
+import useTheme from '../../hooks/useTheme'
+
+const About = () => {
   const { isDark, setTheme } = useTheme()
-  console.log(isDark);
-  
+  console.log(isDark)
+
   return (
     <Container>
       <Main>
