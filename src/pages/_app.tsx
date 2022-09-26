@@ -8,9 +8,12 @@ import GlobalStyle from '../../uikit/src/Global'
 import { useStore, persistor } from '../state'
 import useThemeCookie from '../hooks/useThemeCookie'
 import Providers from '../Providers'
+import useLanguageCookie from '../hooks/useLangugeCookie'
+import Menu from '../components/Menu'
 
 function GlobalHooks() {
   useThemeCookie()
+  useLanguageCookie()
   return null
 }
 
@@ -53,10 +56,14 @@ const App = ({ Component, pageProps, ...appProps }: AppPropsWithLayout) => {
   // Use the layout defined at the page level, if available
   const Layout = Component.Layout || Fragment
 
+  const ShowMenu = Component.mp ? Fragment : Menu
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ShowMenu>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ShowMenu>
   )
 }
 

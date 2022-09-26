@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"About":"About","Blog":"Blog","Brand":"Brand","Community":"Community","Contact":"Contact","Customer Support":"Customer Support","Developers":"Developers","English":"Inglés","Get started by editing":"Comienza editando","Help":"Help","Spanish":"Español","Welcome to":"Bienvenido a"}};
